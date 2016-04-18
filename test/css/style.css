@@ -1,0 +1,186 @@
+/*公用样式*/
+*{margin: 0;padding: 0;}
+ul,li{list-style: none;}
+body{font-family: "微软雅黑";font-size: 12px;}
+img{max-width: 100%;}
+a{text-decoration: none;}
+button,input,textarea{outline: medium;}
+.ellipsis{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	white-space: nowrap;
+}
+/*公用样式 END*/
+.searchBar{
+	width: 90%;
+	height: 40px;
+	margin: 10px auto;
+}
+.searchBar img{height: 80%;margin-top: 4px;float: left;}
+.searchBar div{
+	width: 86%;
+	height: 100%;
+	float: right;
+	background: #efefef;
+	border-radius:5px ;
+	text-align: center;
+	line-height: 40px;
+	color: #cccccc;
+	font-size: 14px;
+}
+.indexNav{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	padding:10px 0 ;
+	border-bottom: 2px solid #EFEFEF;
+	display: box;
+	display: -moz-box;
+	display: -webkit-box;
+}
+.indexNav li{
+	-moz-box-flex: 1;
+	-webkit-box-flex: 1;
+	border-left:2px solid #efefef ;
+}
+.indexNav li:first-child{border-left: none;}
+.indexNav li img{
+	width: 60%;
+	display: block;
+	margin: 0 auto;
+}
+.indexNav li p{
+	text-align: center;
+	color: #000;
+	margin-top: 5px;
+}
+.broadcast{
+	width: 90%;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 15px 0;
+}
+.broadcast p{
+	width: 100%;
+	color: #000;
+}
+.broadcast p:first-child{font-size: 14px;}
+.broadcast p span{margin: 0 10px;}
+.broadcast p.ellipsis span{color: #888;margin-left: 10px;}
+.broadcast p.ellipsis{margin-top: 10px;}
+.recommend,.hot,.star,.interest,.active{
+	padding:15px 0;
+	overflow: hidden;
+	background: #EFEFEF;
+}
+.recommend>div,.hot>div,.star>div,.interest>div,.active>div{
+	width: 100%;
+	overflow: hidden;
+	background: #fff;
+	margin: 0 auto;
+}
+div.title{
+	width: 100%;
+	padding: 7px 0;
+	border-bottom: 1px solid #EFEFEF;
+	overflow: hidden;
+}
+div.title span{float: left;color: #000;font-size: 14px;margin-left: 5%;}
+div.title a,div.title i{float: right;font-size: 12px;color: #888;margin-right: 5%;line-height: 19px;}
+div.title i{font-style: normal;}
+.recommend .bImg{width: 90%;margin: 0 auto;display: block;margin-top: 15px;}
+
+.recommend ul li p{text-align: center;margin-top: 2px;}
+.hot,.star{padding: 0;padding-bottom: 15px;}
+.hot ul{
+	width: 90%;
+	overflow: hidden;
+	margin: 0 auto;
+}
+.hot ul li{
+	padding: 10px 0;
+	overflow: hidden;
+	border-bottom: 1px solid #EFEFEF;
+}
+.hot ul li img{display: block;float: left;width: 33%;}
+.hot ul li div{
+	width: 65%;
+	float: right;
+	overflow: hidden;
+}
+.hot ul li div span{
+	display: inline-block;
+	padding: 2px 5px;
+	border-radius:3px ;
+	margin-right: 3px;
+}
+.hot ul li div span.orange{border: 1px solid orange;color: orange;}
+.hot ul li p i{font-style: normal;font-size: 10px;color: #bbb;line-height: 22px;float: right;}
+.hot ul li p{width: 100%;}
+.hot ul li .hotTitle{font-size: 14px;margin-top: 5px;margin-bottom: 18px;}
+.hot ul li p.tag{color: #888;margin-top: 2px;}
+.star p{margin: 5px 0;}
+.star ul{
+	width: 90%;
+	overflow: hidden;
+	margin:15px auto;
+	display: box;
+	display: -moz-box;
+	display: -webkit-box;
+}
+.star ul li{
+	-moz-box-flex: 1;
+	-webkit-box-flex: 1;
+	margin-left: 15px;
+}
+.star ul li:first-child{margin-left: 0;}
+.star button{
+	background: none;
+	padding: 2px 5px;
+	color: orange;
+	border: 1px solid orange;
+	border-radius:3px ;
+	display: block;
+	margin: 0 auto;
+}
+
+.interest ul,.recommend ul{
+	width: 90%;
+	display: box;
+	display: -webkit-box;
+	display: -moz-box;
+	margin-left: 5%;
+	padding: 15px 0;
+}
+.interest ul li,.recommend ul li{
+	-moz-box-flex: 1;
+	-webkit-box-flex: 1;
+	margin-left: 15px;
+	max-height: 167px;
+}
+.interest ul li img{width: 80%;margin: 0 auto;display: block;}
+.interest ul li:first-child,.recommend ul li:first-child{margin-left: 0;}
+.interest ul li p{text-align: center;margin: 5px 0;}
+.interest ul li button{
+	background: none;
+	padding: 2px 5px;
+	color: orange;
+	border: 1px solid orange;
+	border-radius:3px ;
+	display: block;
+	margin: 0 auto;
+}
+.active .swiper-container2{width: 90%;margin: 15px auto;}
+.footNav{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.footNav li{
+	width: 20%;
+	float: left;
+	text-align: center;
+	padding:5px 0;
+}
+.footNav li img{width: 80%;}

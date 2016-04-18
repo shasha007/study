@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script type="text/javascript" src="mui/js/mui.min.js" ></script>
+		<link rel="stylesheet" href="mui/css/mui.min.css" />
+		<style>
+			/*点击变蓝色高亮*/
+			.mui-table-view-cell.mui-active{
+				background-color: orange;
+				color: white;
+			}
+			.mui-collapse-content{
+				background-color: #f3f1ee;
+				/*height: 100px;*/
+				text-align: left;
+			}
+			.mui-table-view-cell.mui-collapse.mui-active>.mui-navigate-right:after, .mui-table-view-cell.mui-collapse.mui-active>.mui-push-right:after{
+			    right: 15px;
+			    content: '∨';
+			    color: #000000;
+			}
+			.mui-table-view-cell.mui-collapse>.mui-navigate-right:after, .mui-table-view-cell.mui-collapse>.mui-push-right:after{
+				content: '>';
+			}
+		</style>
+		<script>
+			mui.init({
+			  pullRefresh : {
+			    container:"#refreshContainer",//下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+			    down : {
+			      contentdown : "下拉可以刷新",//可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
+			      contentover : "释放立即刷新",//可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
+			      contentrefresh : "正在刷新...",//可选，正在刷新状态时，下拉刷新控件上显示的标题内容
+			      callback :pullfresh-function //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+			    }
+			    }
+			});
+		</script>
+	</head>
+	<body>
+		<!--accordion（折叠面板）-->
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell mui-collapse">
+				<a class="mui-navigate-right" href="#">Item 1</a>
+				<div class="mui-collapse-content">
+					 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco. quis nostrud exercitation ullamco. quis nostrud exercitation ullamco. quis nostrud exercitation ullamco. quis nostrud exercitation ullamco.</p>
+				</div>
+			</li>
+			<li class="mui-table-view-cell mui-collapse">
+				<a class="mui-navigate-right" href="#">Item 2</a>
+				<div class="mui-collapse-content">
+					<!-- 第2个面板中的内容 -->
+				</div>
+			</li>
+			<li class="mui-table-view-cell mui-collapse">
+				<a class="mui-navigate-right" href="#">Item 3</a>
+				<div class="mui-collapse-content">
+					<!-- 第3个面板中的内容 -->
+				</div>
+			</li>
+		</ul>
+		<!--定时轮播-->
+		<ul class="mui-table-view mui-table-view-chevron">
+			<li id="slider_switch" class="mui-table-view-cell">
+				定时轮播
+				<div class="mui-switch">
+					<div class="mui-switch-handle"></div>
+				</div>
+			</li>
+		</ul>
+		<div id="slider" class="mui-slider">
+			<div class="mui-slider-group mui-slider-loop">
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/yuantiao.jpg"></a>
+				</div>
+				<div class="mui-slider-item">
+					<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/shuijiao.jpg"></a>
+				</div>
+				<div class="mui-slider-item">
+					<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/muwu.jpg"></a>
+				</div>
+				<div class="mui-slider-item">
+					<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/cbd.jpg"></a>
+				</div>
+				<div class="mui-slider-item">
+					<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/yuantiao.jpg"></a>
+				</div>
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/shuijiao.jpg"></a>
+				</div>
+			</div>
+			<div class="mui-slider-indicator">
+				<div class="mui-indicator mui-active"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+			</div>
+		</div>
+		<!--badge（数字角标）-->
+		<span class="mui-badge">1</span>
+		<span class="mui-badge mui-badge-primary">12</span>
+		<span class="mui-badge mui-badge-success">123</span>
+		<span class="mui-badge mui-badge-warning">3</span>
+		<span class="mui-badge mui-badge-danger">45</span>
+		<span class="mui-badge mui-badge-purple">456</span>
+		</br>
+		<!--若无需底色，则增加.mui-badge-inverted类即可-->
+		<span class="mui-badge mui-badge-inverted">1</span>
+		<span class="mui-badge mui-badge-primary mui-badge-inverted">2</span>
+		<span class="mui-badge mui-badge-success mui-badge-inverted">3</span>
+		<span class="mui-badge mui-badge-warning mui-badge-inverted">4</span>
+		<span class="mui-badge mui-badge-danger mui-badge-inverted">5</span>
+		<span class="mui-badge mui-badge-royal mui-badge-inverted">6</span>
+		</br>
+		<!--button（按钮）-->
+		<button type="button" class="mui-btn">默认</button>
+		<button type="button" class="mui-btn mui-btn-primary">蓝色</button>
+		<button type="button" class="mui-btn mui-btn-success">绿色</button>
+		<button type="button" class="mui-btn mui-btn-warning">黄色</button>
+		<button type="button" class="mui-btn mui-btn-danger">红色</button>
+		<button type="button" class="mui-btn mui-btn-royal">紫色</button>
+		<!--checkbox-->
+		<div class="mui-input-row mui-checkbox">
+		  <label>checkbox示例</label>
+		  <input name="checkbox1" value="Item 1" type="checkbox" checked>
+		</div>
+		<!--默认checkbox在右侧显示，若希望在左侧显示，只需增加.mui-left类即可-->
+		<div class="mui-input-row mui-checkbox mui-left">
+		  <label>checkbox左侧显示示例</label>
+		  <input name="checkbox1" value="Item 1" type="checkbox">
+		</div>
+		<!---->
+		<span class="mui-icon mui-icon-weixin"></span>
+		<span class="mui-icon mui-icon-contact"></span>
+		<span class="mui-icon mui-icon-weibo"></span>
+		<!---->
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell">Item 1</li>
+			<li class="mui-table-view-cell">Item 2</li>
+			<li class="mui-table-view-cell">Item 3</li>
+		</ul>
+		<!---->
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right">Item 1</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right">Item 2</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right">Item 3</a>
+			</li>
+		</ul>
+		<!---->
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-left" src="../images/shuijiao.jpg">
+					<div class="mui-media-body">
+						幸福
+						<p class='mui-ellipsis'>能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-left" src="../images/muwu.jpg">
+					<div class="mui-media-body">
+						木屋
+						<p class='mui-ellipsis'>想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖.</p>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-left" src="../images/cbd.jpg">
+					<div class="mui-media-body">
+						CBD
+						<p class='mui-ellipsis'>烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
+					</div>
+				</a>
+			</li>
+		</ul>
+		<!---->
+		<div class="mui-numbox">
+		  <!-- "-"按钮，点击可减小当前数值 -->
+		  <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+		  <input class="mui-numbox-input" type="number" />
+		  <!-- "+"按钮，点击可增大当前数值 -->
+		  <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+		</div>
+		<!---->
+		<div class="mui-numbox" data-numbox-step='10' data-numbox-min='0' data-numbox-max='100'>
+		  <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+		  <input class="mui-numbox-input" type="number" />
+		  <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+		</div>
+		<!---->
+		<!-- 侧滑导航根容器 -->
+		<div class="mui-off-canvas-wrap mui-draggable">
+		  <!-- 菜单容器 -->
+		  <aside class="mui-off-canvas-left">
+		    <div class="mui-scroll-wrapper">
+		      <div class="mui-scroll">
+		        <!-- 菜单具体展示内容 -->
+		        ...
+		      </div>
+		    </div>
+		  </aside>
+		  <!-- 主页面容器 -->
+		  <div class="mui-inner-wrap">
+		    <!-- 主页面标题 -->
+		    <header class="mui-bar mui-bar-nav">
+		      <a class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
+		      <h1 class="mui-title">标题</h1>
+		    </header>
+		    <div class="mui-content mui-scroll-wrapper">
+		      <div class="mui-scroll">
+		        <!-- 主界面具体展示内容 -->
+		        ...
+		      </div>
+		    </div>  
+		  </div>
+		</div>
+		<!---->
+		<div class="mui-popover-action">
+		  <ul class="mui-table-view">
+		    <li class="mui-table-view-cell"><a href="#popover" id="openPopover" class="mui-btn mui-btn-primary mui-btn-block">打开弹出菜单</a></li>
+		    <li class="mui-table-view-cell"><a href="#">Item2</a></li>
+		    <li class="mui-table-view-cell"><a href="#">Item3</a></li>
+		    <li class="mui-table-view-cell"><a href="#">Item4</a></li>
+		    <li class="mui-table-view-cell"><a href="#">Item5</a></li>
+		  </ul>
+	  </div>
+	  <!---->
+	  <div class="mui-input-row mui-radio">
+		<label>radio</label>
+		<input name="radio1" type="radio">
+	</div>
+	<!---->
+	<ul class="mui-table-view mui-table-view-radio">
+		<li class="mui-table-view-cell">
+			<a class="mui-navigate-right">Item 1</a>
+		</li>
+		<li class="mui-table-view-cell mui-selected">
+			<a class="mui-navigate-right">Item 2</a>
+		</li>
+		<li class="mui-table-view-cell">
+			<a class="mui-navigate-right">Item 3</a>
+		</li>
+	</ul>
+	<!---->
+	<!--<div class="mui-input-row mui-input-range">
+		<label>Range</label>
+		<input type="range" min="0" max="100">
+	</div>-->
+	<!---->
+	<!--<div class="mui-scroll-wrapper">
+		<div class="mui-scroll">-->
+			<!--这里放置真实显示的DOM内容-->
+					<!--<label>Range</label>
+		</div>
+	</div>-->
+	<!---->
+	<ul class="mui-table-view mui-grid-view mui-grid-9">
+	<li class="mui-table-view-cell mui-media mui-col-xs-4">
+		<a href="#">
+			<span class="mui-icon mui-icon-home"></span>
+			<div class="mui-media-body">Home</div>
+		</a>
+	</li>
+	<li class="mui-table-view-cell mui-media mui-col-xs-4">
+		<a href="#">
+			<span class="mui-icon mui-icon-sms"><span class="mui-badge">5</span></span>
+			<div class="mui-media-body">Email</div>
+		</a>
+	</li>
+	<li class="mui-table-view-cell mui-media mui-col-xs-4">
+		<a href="#">
+			<span class="mui-icon mui-icon-calendar"></span>
+			<div class="mui-media-body">Calendar</div>
+		</a>
+	</li>
+	<li class="mui-table-view-cell mui-media mui-col-xs-4">
+		<a href="#">
+			<span class="mui-icon mui-icon-chat"></span>
+			<div class="mui-media-body">Chat</div>
+		</a>
+	</li>
+	<li class="mui-table-view-cell mui-media mui-col-xs-4">
+		<a href="#">
+			<span class="mui-icon mui-icon-category"></span>
+			<div class="mui-media-body">Sort</div>
+		</a>
+	</li>
+	<li class="mui-table-view-cell mui-media mui-col-xs-4">
+		<a href="#">
+			<span class="mui-icon mui-icon-map"></span>
+			<div class="mui-media-body">Map</div>
+		</a>
+	</li>
+	<li class="mui-table-view-cell mui-media mui-col-xs-4">
+		<a href="#">
+			<span class="mui-icon mui-icon-search"></span>
+			<div class="mui-media-body">Search</div>
+		</a>
+	</li>
+	<li class="mui-table-view-cell mui-media mui-col-xs-4">
+		<a href="#">
+			<span class="mui-icon mui-icon-phone"></span>
+			<div class="mui-media-body">Phone</div>
+		</a>
+	</li>
+	<li class="mui-table-view-cell mui-media mui-col-xs-4">
+		<a href="#">
+			<span class="mui-icon mui-icon-cog"></span>
+			<div class="mui-media-body">Setting</div>
+		</a>
+	</li>
+</ul>
+
+	</body>
+</html>
+<script>
+	var gallery = mui('.mui-slider');
+		gallery.slider({
+		  interval:5000//自动轮播周期，若为0则不自动播放，默认为0；
+		});
+
+</script>

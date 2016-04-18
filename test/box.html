@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<style>
+			*{margin: 0;padding: 0;}
+			ul,li{list-style: none;}
+			img{max-width:100%}
+			.div1{
+				display: -webkit-box;
+				/*display: flex;*/
+				/*display: inline-flex;*/
+				/*-webkit-box-flex: 10;*/
+				/*-webkit-box-orient: horizontal ;*/
+				-webkit-box-align: center;
+			}
+
+			.bar{
+				width: 100%;
+				overflow: hidden;
+				display: box;
+				display: -moz-box;
+				display: -webkit-box;
+			}
+			.bar li{
+				-moz-box-flex: 1;
+				-webkit-box-flex: 1;
+				overflow: hidden;
+				margin-left: 15px;
+			}
+			.bar li:first-child{margin-left: 0;}
+			article{
+			   width:600px;
+			   height:200px;
+			   display:-moz-box;
+			   display:-webkit-box;
+			   display:box;
+			}
+			section:nth-child(1){
+			   background:orange;
+			   -moz-box-flex:0.1;
+			   -webkit-box-flex:0.1;
+			   /*box-flex:1;*/
+			    /*box-pack: justify;*/
+			   /*box-align: justify;*/
+			  /*text-align: center;*/
+			  box-pack:center;
+			box-align:center;
+			}
+			section:nth-child(2){
+			   background:purple;
+			   -moz-box-flex:1;
+			   -webkit-box-flex:0.1;
+			   /*box-flex:1;*/
+			    box-pack: justify;
+			    text-align: left;
+			}
+			section:nth-child(3){
+			   -moz-box-flex:1;
+			   -webkit-box-flex:0.1;
+			   /*box-flex:1;*/
+			    box-pack: justify;
+			   background:green;
+			   text-align: justify;
+			}
+		</style>
+	</head>
+	<!--<body>
+		<ul class="bar">
+			<li>
+				<img src="img/img3.jpg">
+			</li>
+			<li>
+				<img src="img/img3.jpg">
+			</li>
+			<li>
+				<img src="img/img3.jpg">
+			</li>
+		</ul>
+		<div class="div1">
+		<div> DIV1 </div> 
+		<div> DIV2 </div> 
+		<div> DIV3 </div> 
+		</div>
+		<div style= "display:inline "> DIV1 </div> 
+		<div style= "display:inline "> DIV2 </div>
+		<div style= "display:inline-block "> DIV1 </div> 
+		<div style= "display:inline-block "> DIV2 </div>
+		<div style= "display:table-caption "> DIV1 </div> 
+		<div style= "display:table-footer-group "> DIV2 </div>
+		<span style= "display:block "> SPAN1 </span> 
+		<span style= "display:block "> SPAN2 </span> -->
+		<article>
+		   <section>01</section>
+		   <section>02</section>
+		   <section>03</section>
+		</article>
+	<!--</body>-->
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+			<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<style>
+		.bann{
+			cursor: pointer;
+			padding: 16px;
+			background-color: green;
+		}
+		.content{
+			display: none;
+			/*position: absolute;*/
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			width: 160px;
+			margin-top: 16px;
+		}
+		.down:hover .content{
+			display: block;
+		}
+		.content a{
+			display: block;
+			text-decoration: none;
+			color: #000000;
+			padding: 12px 16px;
+		}
+		.content a:hover{
+			background-color: #f1f1f1;
+		}
+		.bannimg{
+			background-color: #269ABC;
+			padding: 16px;
+		}
+		.downimg{
+			margin-top: 30px;
+		}
+		.downimg:hover .contentimg{
+			display: block;
+		}
+		.contentimg{
+			display: none;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			width: 360px;
+		}
+		
+		ul{
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			list-style: none;
+			display: inline-block;
+			width: 100%;
+			background-color: #286090;
+		}
+		li{
+			float: left;
+			padding: 16px;
+		}
+		li:hover{
+			background-color: #00FF00;
+		}
+		.downli a{
+			text-decoration: none;
+			color: #000000;
+		}
+		.downli{
+			display: inline-block;
+		}
+		.contentli{
+			display: none;
+			position: absolute;
+			width: 160px;
+    		background-color: #f9f9f9;
+    		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		}
+		.downli:hover .contentli{
+			display: block;
+
+		}
+		.contentli a{
+			display: block;
+			color: black;
+		    padding: 12px 16px;
+		    text-decoration: none;
+			
+		}
+		.libtn {
+		    display: inline-block;
+		    text-align: center;
+		    padding: 16px;
+		    text-decoration: none;
+		}
+	div.img
+	{
+	  margin: 2px;
+	  border: 1px solid #0000ff;
+	  height: auto;
+	  width: auto;
+	  float: left;
+	  text-align: center;
+	}	
+	div.img img
+	{
+	  display: inline;
+	  margin: 3px;
+	  border: 1px solid #ffffff;
+	  clip:rect(0px,60px,200px,0px);
+	}
+	div.img a:hover img {border: 1px solid #0000ff;}
+	div.desc
+	{
+	  text-align: center;
+	  font-weight: normal;
+	  width: 120px;
+	  margin: 2px;
+	}
+	img:hover{
+		opacity: 0.4;
+		filter: alpha(opacity=40);
+	}
+	.overflow22{
+		background-color:#00FFFF;
+		width: 100px;
+		height: 100px;
+		overflow: auto;
+	}
+		</style>
+	</head>
+	<body>
+		<div class="down">
+			<span class="bann">点我有下拉菜单！</span>
+			<div class="content">
+				<a href="http://www.runoob.com">菜鸟教程 1</a>
+    			<a href="http://www.runoob.com">菜鸟教程 2</a>
+    			<a href="http://www.runoob.com">菜鸟教程 3</a>
+			</div>
+		</div>
+		<br />
+		<div class="downimg">
+			<!--<span class="bannimg">下拉图片！</span>-->
+			<p><img src="img/img4.jpg" width="100px" height="120px"/>点我有放大的图片</p>
+			<div class="contentimg">
+				<img src="img/img4.jpg" width="300px" height="320px"/>
+				<div class="desc">学的不是技术，是精神！</div>
+			</div>
+		</div>
+		<ul>
+			<li>广播</li>
+			<li>新闻</li>
+			<div class="downli">
+				<a href="#" class="libtn">下拉菜单</a>
+				<div class="contentli">
+					<a href="#">链接1</a>
+					<a href="#">链接2</a>
+					<a href="#">链接3</a>
+				</div>
+			</div>
+		</ul>
+		<h3>你好，我们来学习！</h3>
+		<div class="img">
+			<a href="#"><img src="img/img5.jpg" width="110px" height="90px"/></a>
+			<div class="desc">Add a description of the image here</div>
+		</div>
+		<div class="img">
+			<a href="#"><img src="img/img5.jpg" width="110px" height="90px"/></a>
+			<div class="desc">Add a description of the image here</div>
+		</div>
+		<div class="img">
+			<a href="#"><img src="img/img5.jpg" width="110px" height="90px"/></a>
+			<div class="desc">Add a description of the image here</div>
+		</div>
+		<div class="img">
+			<a href="#"><img src="img/img5.jpg" width="110px" height="90px"/></a>
+			<div class="desc">Add a description of the image here</div>
+		</div>
+		<div class="overflow22">
+			当你想更好的控制布局时你可以使用 overflow 属性。尝试修改 overflow 属性为: visible, hidden, scroll, 或 inherit 并查看效果。 默认值为 visible。
+		</div>
+	</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+		<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<head>
+<style> 
+h2{
+text-shadow: 5px 5px 5px #FF0000;
+}
+div
+{
+	border:1px solid black;
+padding:35px;
+background:url(img/img2.jpg);
+background-size:63px 100px;
+-moz-background-size:63px 100px; /* 老版本的 Firefox */
+background-repeat:no-repeat;
+padding-top:80px;
+background-position:left;
+}
+/*body{
+	background:url(img/img2.jpg);
+}*/
+p.test
+{
+width:11em; 
+border:1px solid #000000;
+word-wrap:break-word;
+text-outline: 2px 2px #ff0000;
+}
+#div1
+{
+background-origin:border-box;
+}
+#div2
+{
+background-origin:content-box;
+}
+</style>
+</head>
+
+<body>
+	<p class="test">This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word will break and wrap to the next line.</p>
+	<h2>阴影效果</h2>
+	<p>background-origin:border-box:</p>
+<div id="div1">
+这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。
+</div>
+
+<p>background-origin:content-box:</p>
+<div id="div2">
+这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。
+</div>
+<p>上面是缩小的背景图片。</p>
+
+<p>原始图片：<img src="img/img2.jpg" alt="Flowers"></p>
+
+</body>
+</html>
+

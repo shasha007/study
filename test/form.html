@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/app.js" ></script>
+	</head>
+	<!--校验不通过聚焦-->
+	<style>
+		input.ng-invalid {
+		    background-color: lightblue;
+		}
+		input:focus {
+			  color:red   
+		}
+		table, th , td {
+		  border: 1px solid grey;
+		  border-collapse: collapse;
+		  padding: 5px;
+		}
+		/*table tr:nth-child(odd) {
+		  background-color: #f1f1f1;
+		}
+		table tr:nth-child(even) {
+		  background-color: #ffffff;
+		}*/
+	</style>
+	<body ng-app="myApp">
+	
+					<!--表单校验-->
+<!--			<div class="col-md-6">-->
+        <form role="form" class="form-horizontal" name="form1">
+            <div class="form-group">
+                <div class="col-md-4">
+                    <label for="name">1.必填项</label>
+                    {{form1.name.$valid}}
+                    {{form1.name.$dirty}}
+				    {{form1.name.$touched}}
+                </div>
+                <div class="col-md-8">
+                    <input class="form-control" onfocus="this.style.background='#ccc'" id="name" name="name" type="text" required ng-model='user.name' />
+                    <!--为应用数据提供状态值-->
+                    <input id="pwdRepeat_msg" class="hidden"></input>
+                    <!--{{form1.name.$valid}}
+				    {{form1.name.$dirty}}
+				    {{form1.name.$touched}}-->
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-4">
+                    <label for="minlength">2.最小长度=5</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" required onblur="minleng.blur();return false;" name="minleng" id="minlength" ng-minlength="5" ng-model="user.minlength" class="form-control" />
+                    {{form1.minleng.$valid}}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-4">
+                    <label for="minlength">3.最大长度=20</label>
+　　　　　　　　　　</div>
+                <div class="col-md-8">
+                    <input type="text" ng-model="user.maxlength" ng-maxlength="20" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-4">
+                    <label for="minlength">4. 模式匹配</label>
+               </div>
+                <div class="col-md-8">
+                 <input type="text" id="minlength" ng-model="user.pattern" ng-pattern="/^[a-zA-Z]*\d$/" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-4">
+                    <label for="email" name="email">5. 电子邮件</label>
+                    {{form1.email.$valid}}
+　　　　　　　　　　</div>
+                <div class="col-md-8">
+                    <input type="email" id="email" name="email" ng-model="user.email" class="form-control" />
+                     <span ng-show="form1.email.$error.email">不是一个合法的邮箱地址</span>
+                     {{form1.email.$valid}}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-4">
+                    <label for="age">6. 数字</label>
+　　　　　　　　　　</div>
+                <div class="col-md-8">
+                    <input type="number" id="age" name="age" ng-model="user.age" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-4">
+                    <label for="url"> 7. URL</label>
+　　　　　　　　　　</div>
+                <div class="col-md-8">
+                    <input type="url" id="url" name="homepage" ng-model="user.url" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group text-center">
+                <input class="btn btn-primary btn-lg" type="submit" value="提交" ng-disabled="form1.$invalid"/>
+            </div>
+        </form>       
+    <!--</div>-->
+    <div class="col-md-12">
+        1.必填项:{{user.name}}<br>
+        2.最小长度=5:{{user.minlength}}<br>
+        3.最大长度=20:{{user.maxlength}}<br>
+        4.模式匹配:{{user.pattern}}<br>
+        5.电子邮件:{{user.email}}<br>
+        6.数字:{{user.age}}<br>
+        7.URL:{{user.url}}<br>
+    </div>
+	</body>
+</html>
+   <script type="text/javascript">
+		   function change(){
+				   var i=document.getElementById("minlength");
+				   if({{form1.minleng.$valid}}==true){
+				   	input . visible = false
+				   }
+				
+		}
+   </script>

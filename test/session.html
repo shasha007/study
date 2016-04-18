@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<script type="text/javascript">
+		function get(id){ return document.getElementById(id);}
+		function savesessionStorage(id){sessionStorage.setItem('message',get(id).value);}
+		function loadsessionStorage(id){get(id).innerHTML=sessionStorage.getItem("message");}
+		function savelocalStorage(id){localStorage.setItem("message",get(id).value);}
+		function loadlocalStorage(id){get(id).innerHTML=localStorage.getItem("message");}
+		</script>
+	</head>
+	<body>
+		<!--<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title" >标题</h1>
+		</header>-->
+		<h2>sessionStorage Demo</h2>
+		<p id="sessionMsg"></p>
+		<input type="text" id="sessionInput" />
+		<input type="button" value="保存数据" onclick="savesessionStorage('sessionInput');" />
+		<input type="button" value="读取数据" onclick="loadsessionStorage('sessionMsg');" />
+		<br />
+		<h2>localStorage Demo</h2>
+		<p id="localMsg"></p>
+		<input type="text" id="localInput" />
+		<input type="button" value="保存数据" onclick="savelocalStorage('localInput');" />
+		<input type="button" value="读取数据" onclick="loadlocalStorage('localMsg');" />
+		</div>
+		<!--loding图-->
+		<!---->
+
+	</body>
+</html>

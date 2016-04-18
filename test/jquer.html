@@ -1,0 +1,101 @@
+<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<title></title> 
+<script src="modules-js/qiyi.js"></script> 
+<script> 
+$(function() { 
+qiyiPlugin.init($("#zong_qiyi")); 
+}); 
+</script> 
+</head> 
+<div id="zong_qiyi"> 
+//XXXXXXXXXXXXXX 
+</div> 
+<!--jQuery写法：--> 
+<script>
+var qiyiPlugin = 
+{ 
+init: function(parentNode) { 
+var self = this; 
+self.parentNode = parentNode; 
+//刷新局部内容 
+self.parentNode 
+.on('refresh',function(event){ 
+self.qiyiList(); 
+}); 
+}, 
+//显示 
+qiyiList: function(){ 
+var self = this; 
+//显示内功信息 
+self.getQiyiList(function(result){ 
+//console.log(result); 
+if(result.qiyiList){ 
+self.qiyiHtml1();//重新覆盖html，防止重复显示内容 
+self.displayQiyiList(result.qiyiList);//展示页面内容 
+}else{ 
+alert("没有获得奇艺数据，请查看接口"); 
+} 
+}); 
+}, 
+//显示奇艺内容 
+displayQiyiList: function(qiyiList){ 
+var self = this; 
+var top = "#zong_qiyi"; 
+$(top).find('#qiyi_control_panel').each(function(){ 
+if ($(this).data('data')) $(this).remove(); 
+}); 
+var line0 = $(top).find("#qiyi_control_panel"); 
+$.each(qiyiList,function(index,item2){ 
+var line1 = $(line0).clone(); 
+$(line1).data('data',item2);//附加属性data与信息 
+$(line1).attr('id',index+1); 
+$(line1).find("#name").html(item2.name); 
+$(line1).find("#level").html(item2.level); 
+$(line1).find("#maxLevel").html(item2.maxLevel); 
+$(line1).find("#exp").html(item2.exp+"/"+item2.needExp); 
+$(line1).find("#desc1").html(item2.desc1); 
+$(line0).before(line1); 
+$(line1).show(); 
+$(line1).find("#upgrade") 
+.on('click',function(event){ 
+var table = $(this).parents('table:first'); 
+var info = $(table).data('data'); 
+self.clickToUpgradeQiyi(info, function(result){ 
+if(!result.success){ 
+alert(result.fail.desc1); 
+}else{ 
+//alert(result.success.desc1); 
+growingPlugin.playerTopData();//改变attrs属性 
+self.parentNode.trigger('refresh'); 
+} 
+}); 
+}); 
+}); 
+}, 
+//赋html值- 
+qiyiHtml1: function() { 
+var string = "<table id='qiyi_control_panel' class='table table-bordered table-hover' style='display:none; width:500;'>"; 
+string += "<tr><td>名称：</td><td id=name>haoren_内功</td></tr>"; 
+string += "<tr><td>当前等级：</td><td id=level></td></tr>"; 
+string += "<tr><td>最大等级：</td><td id=maxLevel></td></tr>"; 
+string += "<tr><td>exp：</td><td id=exp></td></tr>"; 
+string += "<tr><td>描述：</td><td id=desc1></td></tr>"; 
+string += "<tr><td><button id='upgrade' class='btn btn-link'>升级</button></td></tr>"; 
+string += "</table>"; 
+$("#zong_qiyi").html(string); 
+}, 
+//奇艺升级 
+clickToUpgradeQiyi: function(info,callback) { 
+var query = "operation=upgradeQiyi"; 
+query += "&qiyiName=" + info.name; 
+toolsPlugin.play(query,callback); 
+}, 
+//获得奇艺列表 
+getQiyiList: function(callback) { 
+var query = "operation=getQiyiList"; 
+toolsPlugin.play(query,callback); 
+}, 
+}; 
+</script>

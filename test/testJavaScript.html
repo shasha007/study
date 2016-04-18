@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="onfunction()">点击这里</button>
+		<p id="demo"></p>
+		<button onclick="onfunction2()">弹框内容换行显示</button>
+		<button onclick="onfunction3()">提示框</button>
+		<p id="demo2"></p>
+		<button onclick="onfunction4()">错误提示</button>
+		<br />
+		<button onclick="startTime()">开始计时</button>
+		<input id="txt" />
+		<button onclick="endTime()">结束计时</button>
+	</body>
+	<script>
+		function onfunction(){
+			var x;
+			var d= new Date().getDay();
+			switch(d){
+				case 0:
+					x="Today it's Sunday";
+					break;
+				case 1:
+					x="Today it's Monday";
+					break;
+				case 2:
+					x="Today it's Tuseday";
+					break;
+				case 3:
+					x="Today it's Wednesday";
+					break;
+				case 4:
+					x="Today it's Thursday";
+					break;
+				case 5:
+					x="Today it's Friday";
+					break;
+				case 6:
+					x="Today it's Saturday";
+					break;
+			}
+			document.getElementById('demo').innerHTML=x;
+		}
+		function onfunction2(){
+			alert("Hello\nHow are you?");
+		}
+		function onfunction3(){
+			var person=prompt("请输入你的名字","Harry Port");
+			if(person!=null && person!=""){
+				x="你好"+person+"!今天感觉如何？";
+				document.getElementById("demo2").innerHTML=x;
+			}
+		}
+		function onfunction4(){
+			try{
+				add();
+			}catch(e){
+				//TODO handle the exception
+				
+				txt="本页有一个错误。\n\n";
+				txt+="错误描述："+e.message+"\n\n";
+				txt+="点击继续。\n\n";
+//				alert(txt);
+				if(!confirm(txt)){
+					document.location.href="http://www.baidu.com";
+				}
+			}
+		}
+		var time_flg=0;
+		var c=0;
+		var t;
+		function timeCount(){
+			document.getElementById("txt").value=c;
+			c=c+1;
+			t=setTimeout(function(){
+				timeCount()
+			},1000);
+		}
+		function startTime(){
+			if(!time_flg){
+				time_flg=1;
+				timeCount();
+			}
+		}
+		function endTime(){
+			clearTimeout(t);
+			time_flg=0;
+		}
+	</script>
+</html>

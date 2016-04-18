@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>slide文字框缩放伸展效果</title>
+<style type="text/css">
+	*{margin:0; padding:0;}
+	ul{list-style:none;}
+	.box{
+		width:300px;
+		margin:10px; 
+		border:1px solid #ccc; 
+		overflow:hidden; 
+		position:relative; 
+		font-size:12px;
+		}
+	.oHx{
+		height:30px;
+		background:#eee; 
+		line-height:30px; 
+		font-size:14px; 
+		text-indent:14px; 
+		cursor:pointer;
+		}
+	.fold{
+		position:absolute;
+		top:9px;
+		right:12px;
+		}
+	.box_content{
+		line-height:18px;
+		overflow:hidden; 
+		display:none;
+		}
+</style>
+<script type="text/javascript">
+ function getElementsByClassName(className,id,tag){
+    tag = tag || "*";
+    if(id){
+     var id = typeof id == "string" ? $(id) : id;
+    }else{
+     var id = document.body;
+    }
+    var els = id.getElementsByTagName(tag),arr = [];
+    for(var i=0,n=els.length;i<n;i++){
+     for(var j=0,k=els[i].className.split(" "),l=k.length;j<l;j++){
+      if(k[j]==className){
+       arr.push(els[i]);
+       break;
+      }
+     }
+    }
+    return arr;
+   };
+   function Slide(slideClass,slideBtn,slideCon,slideSpeed) {
+    this.oSlides = getElementsByClassName(slideClass);
+    this.oTimer = null;
+    this.slideBtn = slideBtn;
+    this.slideCon = slideCon;
+    this.slideSpeed = slideSpeed;
+   }
+   Slide.prototype = {
+    oTimer:null,
+    _init:function (){
+     this._slideEvent();
+    },
+    _slideEvent:function (){
+     var This = this;
+     for(var i = 0,n=This.oSlides.length;i<n;i++){
+      (function(n){
+       var oSlide = This.oSlides[n];
+       var oSlideBtn = getElementsByClassName(This.slideBtn,oSlide)[0];
+       var oSlideCon = getElementsByClassName(This.slideCon,oSlide)[0];
+       oSlideBtn.onclick = function (){
+        if(oSlideCon.style.display == "block" && This.oTimer == null){
+         This._slideClose(oSlideCon);
+        }else if(!(oSlideCon.style.display == "block" ) && This.oTimer == null){
+         This._slideOpen(oSlideCon);
+        }
+       }
+      })(i)
+     }
+    },
+    _slideOpen:function (slideCon){
+     var This = this;
+     slideCon.style.display = "block";
+     slideCon.style.height = "auto";
+     var slideHeight = slideCon.offsetHeight;
+     slideCon.style.height = 0 + "px";
+     This.oTimer = setInterval(function (){
+      if(slideCon.offsetHeight < slideHeight){
+       slideCon.style.height = slideCon.offsetHeight + 2 + "px";
+      }else{
+       clearInterval(This.oTimer);
+       This.oTimer = null;
+      }
+     },This.slideSpeed);
+    },
+    _slideClose:function (slideCon){
+     var This = this;
+     This.oTimer = setInterval(function (){
+      if(slideCon.offsetHeight <= 0){
+       clearInterval(This.oTimer);
+       slideCon.style.display = "none";
+       This.oTimer = null;
+      }else{
+       slideCon.style.height =slideCon.offsetHeight - 2 + "px";
+      }
+     },This.slideSpeed);
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <div class="box"> 
+   <div class="oHx slide">收缩2</div> 
+   <div class="box_content">
+    <ul class="uft" style="padding:10px;"> 
+     <li><a href="#" target="_blank">scscms V1.0 阳光企业网站系统</a></li>
+  <li><a href="#" target="_blank">24点，VC++游戏源码</a></li>
+  <li><a href="#" target="_blank">可记录图像的C#数据库记录单程序</a></li>
+  <li><a href="#" target="_blank">jQuery 1.4 参考指南的实例源代码</a></li>
+    </ul> 
+   </div>
+  </div>
+  <div class="box"> 
+   <div class="oHx slide">收缩3</div> 
+   <div class="box_content">
+    <ul class="uft"style="padding:10px;"> 
+     <li><a href="#" target="_blank">scscms V1.0 阳光企业网站系统</a></li>
+  <li><a href="#" target="_blank">24点，VC++游戏源码</a></li>
+  <li><a href="#" target="_blank">可记录图像的C#数据库记录单程序</a></li>
+  <li><a href="#" target="_blank">jQuery 1.4 参考指南的实例源代码</a></li>
+  <li><a href="#" target="_blank">jQuery 1.4 参考指南的实例源代码</a></li>
+  <li><a href="#" target="_blank">jQuery 1.4 参考指南的实例源代码</a></li>
+  <li><a href="#" target="_blank">jQuery 1.4 参考指南的实例源代码</a></li>
+    </ul> 
+   </div>
+  </div>
+  <script type="text/javascript">
+   var mySlide = new Slide("box","slide","box_content",10); 
+   mySlide._slideEvent();
+  </script>
+ </body>
+</html>

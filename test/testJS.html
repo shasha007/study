@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		 <style>
+		  /*p {
+		    background: yellow;
+		    font-weight: bold;
+		    cursor: pointer;
+		    padding: 5px;
+		  }
+		  p.over {
+		    background: #ccc;
+		  }
+		  span {
+		    color: red;
+		  }*/
+  		</style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	</head>
+	<body <!--onload="checkCookies()"-->>
+				<!---->
+		<p>计算所有参数之和：</p>
+		<p id="demo8"></p>
+		<!--H5新特性touchstart-->
+		<div id="inp"></div>
+		<!--innerHTML改变内容-->
+		<p id="demo">这是一个段落</p>
+		<button type="button" onclick="displayDate()">显示日期</button>
+		<!--直接写入 HTML 输出流-->
+		<strong>document.write</strong>
+		<!--事件-->
+		<button type="button" onclick="alert('欢迎你！')">点我！</button>
+		<!--开关灯-->
+		<img id="myimg" src="img/pic_bulboff.gif" width="30%" onclick="changeimg()"/>
+		<!--改变 HTML 样式     isNaN(x)"不是数字"-->
+		<p>请输入数字。如果输入值不是数字，浏览器会弹出提示框。</p>
+
+		<input id="demo1" type="text">
+		<button type="button" onclick="myFunction()">点击这里</button>
+		<!---->
+	
+		<!---->
+		<!--<form name="myForm" action="demo-form.php" onsubmit="return validateForm()" method="post">
+		姓: <input type="text" name="fname">
+		Email: <input type="text" name="email">
+		<input type="submit" value="提交">
+		
+		</form>-->
+		<!---->
+		<a href="#pos">点我定位到指定位置!</a>
+		<p id="pos">尾部定位点</p>
+		<!---->
+		<!--<p>查找最大的数。</p>
+		<p id="demo3"></p>-->
+		<p>全局变量计数。</p>
+		
+		<button type="button" onclick="myFunction9()">计数!</button>
+		
+		<p id="demo9">0</p>
+		<!--闭包-->
+		<p>局部变量计数。</p>
+
+		<button type="button" onclick="myFunction9()">计数!</button>
+		
+		<p id="demo10">0</p>
+		<!--事件-->
+		<h1 onclick="this.innerHTML='Ooops!'">点击文本!</h1>
+		输入你的名字: <input type="text" id="fname" onchange="myFunction()">
+<p>当你离开输入框后，函数将被触发，将小写字母转为大写字母。</p>
+		<!--onmouseOver-->
+		<div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color:#D94A38;width:120px;height:20px;padding:40px;">Mouse Over Me</div>
+		<!--点用户点击按钮时触发监听事件-->
+		<p>该实例使用 addEventListener() 方法在按钮中添加点击事件。 </p>
+
+		<button id="myBtn">点我</button>
+		<p id="demo11"></p>
+		<!--动态追加标签-->
+		<div id="div1">
+			<p id="p1">这是一个段落。</p>
+			<p id="p2">这是另一个段落。</p>
+		</div>
+		<p>删除节点</p>
+		<div id="div2">
+			<p id="p11">这是一个段落。</p>
+			<p id="p22">这是另一个段落。</p>
+		</div>
+		<p>点击下面的按钮，循环遍历对象 "person" 的属性。</p>
+		<button onclick="myFunction()">点击这里</button>
+		<p id="demo13"></p>
+		<p id="demo14"></p>
+		<input type="button" value="加载新文档" onclick="newDoc()">
+		<div id="example"></div>
+		<p>You have viewed this page <span id="count">0</span>  time(s).</p>
+		<p><input type="button" value="changeStorage" onClick="changeS()"/></p>
+		<p class="ee3">Click me!</p>
+		<span></span>
+	</body>
+	<script type="text/javascript" src="js/script.js" ></script>
+</html>

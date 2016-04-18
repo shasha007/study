@@ -1,0 +1,43 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js" ></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	//$.ajax({url:"/pu/data/test1.txt",async:false})
+		$("#b01").click(function(){
+		htmlobj=$.ajax({url:"/pu/data/test1.txt",async:false});
+		$("#myDiv").html(htmlobj.responseText);
+	});
+	//.load
+	$("#b02").click(function(){
+		
+		$("#myDiv2").load('/pu/data/test1.txt');
+	});
+	//$.getJSON
+    $("button").click(function(){
+	    $.getJSON("/pu/data/test.asp",function(result){
+	
+	      $.each(result, function(i, field){
+	
+	        $("p").append(field + " ");
+	      });
+	    });
+});
+
+});
+</script>
+</head>
+<body>
+
+<div id="myDiv"><h2>通过 AJAX 改变文本</h2></div>
+<button id="b01" type="button">($.ajax)改变内容</button>
+<br />
+<div id="myDiv2"><h2>通过 AJAX 改变文本</h2></div>
+<button id="b02" type="button">(load)改变内容</button>
+<br />
+<!---->
+<button>获得 JSON 数据</button>
+<p>aaa</p>
+</body>
+</html>

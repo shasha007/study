@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title></title>
+	<style type="text/css">
+		*{padding:0;margin:0;}
+		body{
+			color: #3e3e3e;
+		}
+		a{
+			text-decoration : none;
+		}
+		ul li {list-style-type:none;}
+		li{
+			display:-webkit-flex;
+			border-top:1px solid #cdcdcd;
+			-webkit-flex-flow:column;
+		}
+		li>p{
+			height:60px;
+			line-height:60px;
+			padding-left:5%;
+			padding-right:2%;
+		}
+		li>div{
+			padding-left:5%;
+			padding-right:2%;
+			-webkit-flex:1;
+		}
+		div.content{
+			display:none;
+		}
+	</style>
+	<script type="text/javascript" src="http://test.pocketuni.net/public/js/jquery.js"></script>
+</head>
+<body>
+		<ul>
+			<li>
+				<p class="title">
+					<span id="tag1">扑金是什么？</span>
+					<a href="javascript:void(0);" id="a1" class="L-a" style="display: block;float: right;">></a>
+				</p>
+				
+				<div class="content"><p>PU金是PU口袋校园为大学生成长服务推出的在校大学生虚拟信贷卡</p></div>
+			</li>
+			
+			<li>
+				<p class="title">
+					<span id="tag2">如何借款？</span>
+					<a href="javascrpt:void(0);" id="a2" class="L-a" style="display: block;float: right;">></a>
+				</p>
+				<div class="content"><p>【登陆PU】-【我的】-【钱包】-【扑金】-【我要借款】</p></div>
+			</li>
+			<li>
+				<p class="title">
+					<span id="tag3">如何还款？</span>
+					<a href="javascript:void(0);" id="a3" class="L-a" style="display: block;float: right;">></a>
+				</p>
+				<div class="content"><p>【登陆PU】--【我的】-【钱包】-【扑金】-【我要还款】-【输入还款金额】-【选择微信/支付宝支付】</p></div>
+			</li>
+		</ul>
+		<script type="text/javascript">
+			$(function(){
+				$('p.title').click(function(){
+					var display = $(this).parent().find('div.content').css('display');
+					if(display == 'none'){
+						$(this).parent().find('div.content').css('display','block');
+						$(this).css({background:'#ea5504',color:'#ffffff'});
+						$(this).find('a').html('∨');
+					}else{
+						$(this).parent().find('div.content').css('display','none');
+						$(this).css({background:'',color:'black'});
+						$(this).find('a').html('>');
+					}
+					
+				});
+			});
+		</script>
+</body>
+</html>

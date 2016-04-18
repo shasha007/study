@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <link href="mui/css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="mui/js/mui.min.js" ></script>
+    <style>
+    	*{margin: 0;padding: 0;}
+    	ul li{
+    		width: 100%;
+    		height: 40px;
+    		line-height: 40px;
+    		border-bottom: 1px solid #EFEFEF;
+    	}
+    </style>
+</head>
+<body>
+	<!--下拉刷新容器-->
+	<div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+	  <div class="mui-scroll">
+	    <!--数据列表-->
+	    <ul class="mui-table-view mui-table-view-chevron">
+	      	<li id="dom">001</li>
+	      	<li>adad</li>
+	      	<li>sd</li>
+	      	<li>fgb</li>
+	      	<li>fgf</li>
+	      	<li>hn</li>
+	      	<li>ewe</li>
+	      	<li>hdf</li>
+	      	<li>54</li>
+	      	<li>hbg</li>
+	      	<li>oi</li>
+	      	<li>pol,k</li>
+	      	<li>jnhbg</li>
+	      	<li>ikujythg</li>
+	      	<li>wer</li>
+	      	<li>dsxfterer5555g</li>
+	      	<li>bvgfr</li>
+	      	<li>001</li>
+	      	<li>adad</li>
+	      	<li>sd</li>
+	      	<li>fgb</li>
+	      	<li>fgf</li>
+	      	<li>hn</li>
+	      	<li>ewe</li>
+	      	<li>hdf</li>
+	      	<li>54</li>
+	      	<li>hbg</li>
+	      	<li>oi</li>
+	      	<li>pol,k</li>
+	      	<li>jnhbg</li>
+	      	<li>ikujythg</li>
+	      	<li>wer</li>
+	      	<li>dsxftg</li>
+	      	<li>bvgfr</li>
+	    </ul>
+	  </div>
+	</div>
+</body>
+<script>
+	document.getElementById("dom").addEventListener("tap",function(){
+		 mui.openWindow({
+		    url: 'TEST.html', 
+		    id:'TEST'
+		  });
+	});
+</script>
+</html>

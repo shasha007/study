@@ -1,0 +1,82 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js" ></script>
+	<script type="text/javascript" src="js/jquery.js" ></script>
+	<style type="text/css"> 
+		div.panel,p.flip
+		{
+		margin:0px;
+		padding:5px;
+		text-align:center;
+		background:#e5eecc;
+		border:solid 1px #c3c3c3;
+		}
+		div.panel
+		{
+		height:120px;
+		display:none;
+		}
+	</style>
+</head>
+
+<body>
+<!---->
+<p>If you click on me, I will disappear.</p>
+<i>If you click on me, I will disappear.555</i>
+<br/>
+<!---->
+<button id="toggle">Toggle</button>
+<button>Click me!</button>
+<!---->
+<p>演示带有不同参数的 fadeIn() 方法。</p>
+<button>点击这里，使三个矩形淡入</button>
+<br><br>
+<div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div>
+<br>
+<div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div>
+<br>
+<div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+<!---->
+<div class="panel">
+<p>W3School - 领先的 Web 技术教程站点</p>
+<p>在 W3School，你可以找到你所需要的所有网站建设教程。</p>
+</div>
+ 
+<p class="flip">请点击这里</p>
+<button id="stop">停止滑动</button>
+<!--动画-->
+<button id="anima">开始动画</button>
+<p>默认情况下，所有 HTML 元素的位置都是静态的，并且无法移动。如需对位置进行操作，记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute。</p>
+<div class="divani" style="background:#98bf21;height:100px;width:100px;position:absolute;">
+	HELLO
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<!---->
+<p id="test1">这是段落。</p>
+<p id="test2">这是另一个段落。</p>
+<p>Input field: <input type="text" id="test3" value="Mickey Mouse"></p>
+<button id="btn1">设置文本</button>
+<button id="btn2">设置 HTML</button>
+<button id="btn3">设置值</button>
+<!---->
+<p id="apen">This is a paragraph.</p>
+<p id="apen">This is another paragraph.</p>
+<ol>
+<li>List item 1</li>
+<li>List item 2</li>
+<li>List item 3</li>
+</ol>
+<button id="btn7">追加文本</button>
+<button id="btn8">追加列表项</button>
+<!---->
+<img src="/i/eg_w3school.gif" alt="W3School Logo" />
+<br><br>
+<button onclick="afterText()">在图片后面添加文本</button>
+</body>
+
+</html> 

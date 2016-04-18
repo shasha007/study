@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>index</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/swiper-3.3.1.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body ng-app="puTest">
+	<!--头部搜索-->
+	<div class="searchBar">
+		<img src="img/icon1.jpg">
+		<div>活动搜索筛选</div>
+	</div>
+	<!--轮播-->
+	<div class="swiper-container">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide"><a href=""><img src="img/ban1.jpg"></a></div>
+	        <div class="swiper-slide"><a href=""><img src="img/ban1.jpg"></a></div>
+	        <div class="swiper-slide"><a href=""><img src="img/ban1.jpg"></a></div>
+	    </div>
+	    <!-- 如果需要分页器 -->
+	    <div class="swiper-pagination"></div> 
+	</div>
+	<ul class="indexNav">
+		<li>
+			<img src="img/img1.jpg">
+			<p>每日签到</p>
+		</li>
+		<li>
+			<img src="img/img1.jpg">
+			<p>每日签到</p>
+		</li>
+		<li>
+			<img src="img/img1.jpg">
+			<p>每日签到</p>
+		</li>
+		<li>
+			<img src="img/img1.jpg">
+			<p>每日签到</p>
+		</li>
+	</ul>
+
+	<!--广播站-->
+	<div class="broadcast">
+		<p>广播站<span>|</span>学校于2015年2月15日放假</p>
+		<p class="ellipsis">7个好友报名参加了<span>大学生艺术节</span></p>
+		<p class="ellipsis">7个好友报名参加了<span>大学生艺术节大学生艺术节大学生艺术节大学生艺术节</span></p>
+	</div>
+	<!--今日推荐-->
+	<div class="recommend">
+		<div>
+			<div class="title">
+				<span>今日推荐</span>
+				<a href="">更多推荐></a>
+			</div>
+			<a href=""><img src="img/img2.jpg" class="bImg"></a>
+			<ul>
+				<li>
+					<img src="img/img3.jpg">
+					<p>健身俱乐部</p>
+				</li>
+				<li>
+					<img src="img/img3.jpg">
+					<p>健身俱乐部</p>
+				</li>
+				<li>
+					<img src="img/img3.jpg">
+					<p>健身俱乐部</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--活动-->
+	<div class="active">
+		<div>
+			<div class="title">
+				<span>全省官方活动</span>
+			</div>
+			<div class="swiper-container2">
+		        <div class="swiper-wrapper">
+		            <div class="swiper-slide"><img src="img/img5.jpg"></div>
+		         	<div class="swiper-slide"><img src="img/img5.jpg"></div>
+		            <div class="swiper-slide"><img src="img/img5.jpg"></div>
+		            <div class="swiper-slide"><img src="img/img5.jpg"></div>
+		         	<div class="swiper-slide"><img src="img/img5.jpg"></div>
+		            <div class="swiper-slide"><img src="img/img5.jpg"></div>
+		        </div>
+		        <!-- Add Pagination -->
+		        <div class="swiper-pagination2"></div>
+		    </div>
+		</div>
+	</div>
+	<!--热门-->
+	<div class="hot">
+		<div>
+			<div class="title">
+				<!--<span class="glyphicon glyphicon-fire"></span>-->
+				<span>本校热门</span>
+				<a href="">本校全部活动></a>
+			</div>
+			<ul>
+				<li>
+					<img src="img/img4.jpg">
+					<div>
+						<p>
+							<span class="orange">学分</span>
+							<span class="orange">学</span>
+							<i>6文好友报名</i>
+						</p>
+						<p class="hotTitle ellipsis">首届英雄联盟赛SOLO冠军首届英雄联盟赛SOLO冠军</p>
+						<p class="tag">口袋大学青年社</p>
+						<p class="tag">2015.02.13-2015.02.28</p>
+					</div>
+				</li>
+				<li>
+					<img src="img/img4.jpg">
+					<div>
+						<p>
+							<span class="orange">学分</span>
+							<span class="orange">学</span>
+							<i>6文好友报名</i>
+						</p>
+						<p class="hotTitle ellipsis">首届英雄联盟赛SOLO冠军首届英雄联盟赛SOLO冠军</p>
+						<p class="tag">口袋大学青年社</p>
+						<p class="tag">2015.02.13-2015.02.28</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--部落之星-->
+	<div class="star" ng-controller="myCtrl">
+		<div>
+			<div class="title">
+				<span>本周部落之星</span>
+				<i ng-click="getData()">本周全部活动></i>
+			</div>
+			<ul>
+				<li>
+					<img src="img/img4.jpg">
+					<p>口袋大学口袋大学</p>
+					<button>申请加入</button>
+				</li>
+				<li>
+					<img src="img/img4.jpg">
+					<p>口袋大学口袋大学</p>
+					<button>申请加入</button>
+				</li>
+				<li>
+					<img src="img/img4.jpg">
+					<p>口袋大学口袋大学</p>
+					<button>申请加入</button>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+	<!--兴趣-->
+	<div class="interest">
+		<div>
+			<div class="title">
+				<span>兴趣相投</span>
+				<a href="">更多></a>
+			</div>
+			<ul>
+				<li>
+					<img src="img/img1.jpg">
+					<p>字母熙然</p>
+					<button>+好友</button>
+				</li>
+				<li>
+					<img src="img/img1.jpg">
+					<p>字母熙然</p>
+					<button>+好友</button>
+				</li>
+				<li>
+					<img src="img/img1.jpg">
+					<p>字母熙然</p>
+					<button>+好友</button>
+				</li>
+				<li>
+					<img src="img/img1.jpg">
+					<p>字母熙然</p>
+					<button>+好友</button>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	<!--底部bar-->
+	<ul class="footNav">
+		<li>
+			首页
+		</li>
+		<li>发现</li>
+		<li>
+			<img src="img/icon2.jpg">
+		</li>
+		<li>关系</li>
+		<li>我的</li>
+	</ul>
+</body>
+<script src="js/jquery-1.12.1.min.js"></script>
+<script type="text/javascript" src="js/swiper-3.3.1.jquery.min.js" ></script>
+<script type="text/javascript" src="js/angular.min.js" ></script>
+<script type="text/javascript" src="js/angular-route.min.js" ></script>
+<script type="text/javascript" src="js/test.js" ></script>
+<script>        
+  var mySwiper = new Swiper ('.swiper-container', {
+  	autoplay:4000,
+  	autoplayDisableOnInteraction:false,
+    direction: 'horizontal',
+    loop: true,
+    // 如果需要分页器
+    pagination: '.swiper-pagination',
+  }) ;
+  var swiper2 = new Swiper('.swiper-container2', {
+	  	autoplay:3000,
+	  	autoplayDisableOnInteraction:false,
+        pagination: '.swiper-pagination2',
+        slidesPerView: 3,
+        paginationClickable: true,
+        spaceBetween: 15
+    });
+ </script>
+</html>

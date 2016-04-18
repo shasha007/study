@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<head>
+<style> 
+.center
+{
+margin:auto;
+margin-top: 100px;
+width:70%;
+background-color:#b0e0e6;
+}
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	float: left;
+	width: 100%;
+}
+li{
+	display: inline;
+}
+a{
+	text-decoration: none;
+	color: white;
+	padding:0.2em 0.6em;
+	border-right:1px solid white;
+}
+a:hover{
+	background-color: #800080;
+	color: #000000;
+}
+.span1{
+	float: left;
+	font-family: "algerian,courier";
+	width: 0.7em;
+	font-size: 400%;
+	line-height: 80%;
+}
+.div5{
+	border-width: 15px;
+	border-image: url(img/img1.jpg) 40 40 round;
+	border-image-repeat: repeat;
+}
+table{
+	margin-top: 10px;
+	border-collapse: collapse;
+}
+table,th,tr,td{
+	border: 1px red solid;
+	text-align: center;
+}
+@font-face
+{
+font-family: myFirstFont;
+src: url('Sansation_Light.ttf')
+    ,url('Sansation_Light.eot'); /* IE9 */
+}
+body{
+	background: #00ff00 url(img/icon1.jpg) no-repeat fixed center; 
+	background-position: center;
+	}
+div
+{
+font-family:myFirstFont;
+}
+.div4{
+	border: 3px solid red;
+	padding: 30px;
+	/*指定绘图区的背景*/
+	background-clip: content-box;
+	background-color: yellow;
+}
+.div3{
+/*	margin-top: 100px;*/
+	text-align: center;
+	/*使DIV看上去像一个按钮*/
+	appearance: button;
+	-webkit-appearance: button;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+}
+.div2{
+	margin-top: 20px;
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	/*animation动画*/
+	position: relative;
+	animation: mymove 5s infinite;
+	animation-delay: 2s;
+	animation-direction: alternate;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-fill-mode: both;
+	/*animation-play-state: paused;*/
+	animation-timing-function: linear;
+	/*chrom*/
+	-webkit-animation: mymove 5s infinite;
+	-webkit-animation-delay:2s;/*延迟2s*/
+	-webkit-animation-direction: alternate;/*反向执行一遍动画*/
+	-webkit-animation-duration: 2s;/*动画在2s内完成*/
+	-webkit-animation-iteration-count: 1;/*动画执行1次*/
+	-webkit-animation-fill-mode: both;
+	/*-webkit-animation-play-state: paused;/*暂停动画*/
+	-webkit-animation-timing-function: linear;/*动画匀速执行*/
+}
+@keyframes mymove{
+	0%   {top:0px; left:0px; background:red;}
+	25%  {top:0px; left:100px; background:blue;}
+	50%  {top:100px; left:100px; background:yellow;}
+	75%  {top:100px; left:0px; background:green;}
+	100% {top:0px; left:0px; background:red;}
+}
+@-webkit-keyframes mymove{
+	0%   {top:0px; left:0px; background:red;}
+	25%  {top:0px; left:100px; background:blue;}
+	50%  {top:100px; left:100px; background:yellow;}
+	75%  {top:100px; left:0px; background:green;}
+	100% {top:0px; left:0px; background:red;}
+}
+.div1{
+	width: 100%;
+	height: 130px;
+	border: 1px solid red;
+	background-image: url(img/icon2.jpg);
+	background-position:left;
+	background-repeat: no-repeat;
+	/*box-flex 属性规定框的子元素是否可伸缩其尺寸*/
+	display: -webkit-box;
+}
+#p1{
+	outline-style: solid;
+	outline-color: yellow;
+	outline-width: 1px;
+	/*使空格距离变大*/
+	word-spacing: 10px;
+	/*box-flex #p1 的宽度是 100 像素*/
+	-webkit-box-flex: 1.0;
+}
+#p2{
+	border: 1px solid blue;
+	/*box-flex #p2 的宽度是 100 像素*/
+	-webkit-box-flex: 2.0;
+}
+.animal {
+    width: 188px;
+    height: 300px;
+    margin: 0 auto;
+    background: url(img/gif.png) repeat-x;
+    -webkit-animation: standby 0.8s steps(8) infinite;
+    animation: standby 0.8s steps(8) infinite;
+}
+@-webkit-keyframes standby {
+    from {
+        background-position: 0 0px;
+    }
+    to {
+        background-position: -1504px 0px;
+    }
+}
+</style>
+</head>
+<body>
+
+<p><b>Note:</b> Internet Explorer 9 only supports .eot fonts.</p>
+
+<div>
+With CSS3, websites can finally use fonts other than the pre selected "web-safe" fonts.
+</div>
+
+<div class="div1">
+	<p id="p1">ni hao ni ahai</p>
+	<p id="p2">nannnanana</p>
+</div>
+<div class="div2"></div>
+<div class="div3">tijiao</div>
+<div class="div4">wiuew你加技术鉴定技术及第三季度吉萨家居卡加萨卡嗲是基地啊家居第四哦啊都驾驶机动爱上京东叫大家爱哦跑道就阿婆说大家欧莎皮带机</div>
+<table>
+	<tr>
+		<th>firstName</th>
+		<th>lastName</th>
+	</tr>
+	<tr>
+		<td>la</td>
+		<td>sh</td>
+	</tr>
+	<tr>
+		<td>la</td>
+		<td>sh</td>
+	</tr>
+</table>
+<div class="div5">在这里，图像平铺（重复），以填补该地区。</div>
+<p>
+<span class="span1">T</span>his is some text.
+This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+</p>
+<ul>
+	<li><a href="#">Link one</a></li>
+	<li><a href="#">Link Two</a></li>
+	<li><a href="#">Link Three</a></li>
+	<li><a href="#">Link Fore</a></li>
+</ul>
+<div class="center">
+<p>In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.</p>
+<p>'Whenever you feel like criticizing anyone,' he told me, 'just remember that all the people in this world haven't had the advantages that you've had.'</p>
+</div>
+<p><b>Note: </b>Using margin:auto will not work in IE8, unless a !DOCTYPE is declared.</p>
+<div class="down">
+	<span>下拉菜单！</span>
+	<div class="content">
+		<p>菜单1</p>
+		<p>菜单2</p>
+	</div>
+</div>
+<div class="animal"></div>
+</body>
+</html>
