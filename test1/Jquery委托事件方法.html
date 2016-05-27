@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>测试事件绑定函数</title>
+    <script type="text/javascript" src="js/jquery.min.js" ></script>
+    <script>
+        window.onload = function(){
+            var liObj, ulObj;
+            ulObj = document.getElementsByTagName('ul')[0];
+            addEvent(ulObj, 'click', clickObjLi)
+
+        };
+
+        //兼容IE和非IE浏览器
+        function addEvent(ele, event_name, func){
+            if(window.attachEvent){
+                ele.attachEvent(event_name, func);
+            }
+            else{
+                event_name = event_name.replace(/^on/, "");
+                ele.addEventListener(event_name, func, false);    //默认事件是冒泡
+            }
+        }
+
+        function clickObjLi (event){
+            var currTarget = event.target;
+            alert(currTarget.innerHTML);
+        }
+        $(function (){
+	    $("input[name=req_qty]").click (function ()
+	   		{
+		   		$(this).select ();
+	   		});
+    	});
+    </script>
+</head>
+<body>
+    <div>
+        <ul>
+            <li class="item1">测试事件绑定1</li>
+            <li class="item2">测试事件绑定2</li>
+            <li class="item3">测试事件绑定3</li>
+            <li class="item4">测试事件绑定4</li>
+        </ul>
+    </div>
+    <div id="ddd">
+		<input type="text" name="req_qty" value="change" />
+	</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<script>
+		window.onload=function(){
+			var s= document.documentElement;
+//			alert(s.nodeName);//取得HTML标签
+			var h=document.body;
+//			alert(h.nodeName);//取得Body标签
+			var g=h.lastChild;
+//			alert(g.childNodes);
+			var a = window.document,
+				n = a.body.scrollTop || a.documentElement.scrollTop || 0;
+				alert(a.documentElement.scrollTop);
+			n += a.documentElement.clientHeight;
+			var e = a.documentElement.scrollHeight;
+			100 > e - n 
+		}
+		</script>
+	</head>
+	<body>
+		<h1>我是第一个内容节点</h1>
+	</body>
+</html>

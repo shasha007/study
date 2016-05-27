@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#content div#main-content h2{
+				color:red;
+			}
+			
+			#content #main-content>h2{
+				color:blue
+			}
+			body #content div[id="main-content"] h2{
+				color:green;
+			}
+			
+			#main-content div.paragraph h2{
+				color:orange;
+			}
+			#main-content [class="paragraph"] h2{
+				color:yellow;
+			}
+			div#main-content div.paragraph h2.first{
+				color:pink;
+			}
+			.ifram{
+				display: none;
+				/*visibility: hidden;*/
+			}
+			ul{
+				list-style: none;
+			}
+			/*li{
+				display: inline-block;
+				*zoom: 1;
+			}*/
+			p{
+				text-indent: 2em;
+				font-style: italic;
+				text-decoration: line-through;
+				word-spacing: 50px;
+				/*letter-spacing: 50px;*/
+			}
+			a{
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="content">
+			<div id="main-content">
+				<h2>CSS简介</h2>
+				<p>CSS（Cascading Style Sheet，可译为“层叠样式表”或“级联样式表”）是一组格式设置规则，用于控制Web页面的外观。</p>
+				<div class="paragraph">
+					<h2 class="first">使用CSS布局的优点</h2>
+					<p>1、表现和内容相分离 2、提高页面浏览速度 3、易于维护和改版 4、使用CSS布局更符合现在的W3C标准.</p>
+				</div>
+			</div>
+		</div>
+		<area  />
+		<div class="ifram">
+		<iframe src="perserve-3d-transform-rotate.html" width="600px" height="400px" frameborder="0" longdesc="www" scrolling="no" name="ssss"></iframe>
+		</div>
+		<div class="paragraph">
+			<h2 class="first">使用CSS布局的优点</h2>
+			<p>1、表现和内容相分离 2、提高页面浏览速度 3、易于维护和改版 4、使用CSS布局更符合现在的W3C标准.</p>
+		</div>
+		<canvas></canvas>
+		<ol>
+			<li>英语</li>
+			<li>语文</li>
+			<li>数学</li>
+		</ol>
+		<a href="mailto:755152366@qq.com">发送</a>
+		<p>
+			表现和内容相分离 2、提高页面浏览速度 3、易于维护和改版 4、使用CSS布局更符合现在的W3C标准.
+		</p>
+		<a>1</a>
+		<a>2</a>
+		<a>3</a>
+		<a>4</a>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>attr</title>
+	<style>
+		span{
+			position: relative;
+			display: inline-block;
+		}
+		span:hover{
+			cursor: pointer;
+		}
+		span:hover:before{
+			content: attr(data-showtip);
+			background-color: #E1E1EA;
+			color: #444;
+			padding: .8em 1em;
+			position: absolute;
+			left: 100%;
+			top: -70%;
+			margin-left: 8px;
+			white-space: pre; 
+		}
+		span:hover:after{
+			content: "";
+			position: absolute;
+			/*width: 0;
+			height: 0;*/
+			border-right: 8px solid #E1E1EA;
+			/*border-left: 8px solid #E1E1EA;*/
+			border-top: 8px solid transparent;
+			border-bottom: 8px solid transparent;
+		}
+	</style>
+</head>
+<body>
+	<span data-showtip="傻了吧的速度速度唧">你的鼠标呢</span>
+</body>
+</html>

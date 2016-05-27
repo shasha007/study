@@ -1,0 +1,56 @@
+<HTML>
+	
+<HEAD>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<TITLE>时间日期篇--显示时钟</TITLE>
+</HEAD>
+
+<BODY bgcolor="#fef4d2" onload=showclock() background="../images/background2.jpg">
+<br>
+<br>
+<center>
+<font color="ffaafa">
+  <h2><font color="#FF00FF"><b>时间日期篇--显示时钟</b></font></h2>
+  </font> 
+  <hr width=300>
+<br><br>
+
+<!-- 案例代码开始 -->
+
+<!-- [Step1]: 这里可以调整时钟的方位 -->
+<span id=liveclock style=position:absolute;left:250px;top:122px;; width: 109px; height: 15px>
+</span>   
+<SCRIPT language=javascript>
+
+function showclock() {if(!document.layers&&!document.all)
+return
+var Digital=new Date()
+var hours=Digital.getHours()
+var minutes=Digital.getMinutes()
+var seconds=Digital.getSeconds()
+var dn="AM"
+if(hours>12){dn="PM"
+hours=hours-12
+}if(hours==0)
+hours=12
+if(minutes<=9)
+minutes="0"+minutes
+if(seconds<=9)
+seconds="0"+seconds
+<!-- [Step2]:这里可以改变时钟的大小 -->
+myclock="<font size='5' face='Arial'><b>"+hours+":"+minutes+":"
++seconds+" "+dn+"</b></font>"
+if(document.layers){document.layers.liveclock.document.write(myclock)
+document.layers.liveclock.document.close()
+}else if(document.all)
+liveclock.innerHTML=myclock
+setTimeout("showclock()",1000)
+}
+</SCRIPT>
+
+<!-- 案例代码结束 -->
+
+</center></BODY>
+
+</HTML>

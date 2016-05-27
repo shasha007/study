@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+	*{margin: 0;padding: 0;}
+	img{
+		max-width: 100%;
+	}
+	</style>
+	<script>
+		function compute(op){
+			num1=parseFloat(document.getElementById("texName1").value);
+			num2=parseFloat(document.getElementById("texName2").value);
+			if(op=="+")
+				document.getElementById("result").value=num1+num2;
+			if(op=="-")
+				document.getElementById("result").value=num1-num2;
+			if(op=="*")
+				document.getElementById("result").value=num1*num2;
+			if(op=="÷")
+				document.getElementById("result").value=num1/num2;
+		}
+		function isTrue(subVal){
+			subVal=document.getElementById("num").value;
+			var findChar="abcdefghijklmnopqrstuvwxyz1234567890@._-";
+			for (i=0;i<subVal.length;i++) {
+				if(findChar.indexOf(subVal.charAt(i))==-1){
+					alert("你的字符串不合法！")
+					return;
+				}
+			}
+			alert("你的字符串合法");
+		}
+		//数组
+		var myArr=new Array("A","B","C");
+		var myArr2=new Array("J","K","L");
+		var myArr3=new Array();
+		myArr3=myArr3.concat(myArr,myArr2);
+		document.write("合并后数组：");
+		for (i=0;i<myArr3.length;i++) {
+			document.write(myArr3[i]+" ");
+		}
+		myArr3.pop();
+		document.write("<br/>删除最后一个元素：");
+		for (i=0;i<myArr3.length;i++) {
+			document.write(myArr3[i]+" ");
+		}
+		myArr3.shift();
+		document.write("<br/>删除第一个元素：");
+		for (i=0;i<myArr3.length;i++) {
+			document.write(myArr3[i]+" ");
+		}
+		myArr3.push("m","n","q");
+		document.write("<br/>向后追加元素：");
+		for (i=0;i<myArr3.length;i++) {
+			document.write(myArr3[i]+" ");
+		}
+		myArr3.unshift("x","y","z");
+		document.write("<br/>数组开头添加元素：");
+		for (i=0;i<myArr3.length;i++) {
+			document.write(myArr3[i]+" ");
+		}
+		var myArr4=myArr3.slice(2,4);
+		document.write("<br/>组成新的数组：");
+		var s=myArr4.join(" ");
+		document.write(s);
+		var s2="张三，李四，王五";
+		var myArr5=s2.split(",");
+		for (i=0;i<myArr5.length;i++) {
+			document.write(myArr5[i]+" ");
+		}
+		var x=new Array(1,20,3,5,12,9);
+		var y=x.sort();
+		document.write(y);
+		x.sort(asc);
+		//升序比较函数
+		function asc(a,b){
+			return a-b;
+		}
+		document.write(x.join(","));
+		//降序排序函数
+		x.sort(des);
+		function des(a,b){
+			return b-a;
+		}
+		document.write(x.join(","));
+		function show(){
+			document.getElementById("msg").innerText=validCode(4);
+		}
+		function validCode(n){
+			var s="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+			var ret="";
+			for (var i=0;i<n;i++) {
+				var index=Math.floor(Math.random()*62);
+				ret+=s.charAt(index);
+			}
+			return ret;
+		}
+		function showDateTime(){
+			
+		}
+		window.onload=showDateTime;
+	</script>
+	<body>
+		<h3><img src="img/banner.png" width="240" height="31"/><br/>计算器！</h3>
+		<p>第一个数：<input type="text" name="texName1" id="texName1"/></p>
+		<p>第二个数：<input type="text" name="texName2" id="texName2"/></p><br />
+		<p>
+			<input type="button" id="addButton" value=" + " onclick="compute('+')"/>
+			<input type="button" id="addButton" value=" - " onclick="compute('-')"/>
+			<input type="button" id="addButton" value=" * " onclick="compute('*')"/>
+			<input type="button" id="addButton" value=" ÷ " onclick="compute('÷')"/>
+		</p>
+		<br />
+		<p>
+			计算结果：<input type="text" id="result"/>
+		</p>
+		<br />
+		<h3>判断字符串是否合法</h3>
+		<input type="text" id="num" />
+		<input  type="button" value="检查" onclick="isTrue()" />
+		<br />
+		<h3>生成随机数</h3>
+		<span id="msg"></span>
+		<input type="button" value="刷新" onclick="show()" />
+		<h3>动态时钟</h3>
+		<h1 id="date"></h1>
+		<span id="msg"></span>
+	</body>
+</html>

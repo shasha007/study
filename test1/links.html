@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function extralinks(){
+				var links=document.links;
+				
+				var total=links.length;
+				var win2=window.open("","","menubar,scrollbars,toolbar");
+				win2.document.write("<font size='2'>一共有"+total+"个连接</font><br />");
+				for (i=0;i<total;i++) {
+					win2.document.write("<font size='2'>"+links[i].outerHTML+"</font><br />")
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" onclick="extralinks()" value="显示所有连接" />
+		<p><a target="_blank" href="http://www.sohu.com">搜狐</a></p>
+		<p><a target="_blank" href="http://www.sina.com">新浪</a></p>
+		<p><a target="_blank" href="http://www.sina.com">163</a></p>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Browser viewport size tester // benfrain.com</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+<style>
+	html{
+		font-size: 100%;
+	}
+	body{
+		font-size: 1em;
+	}
+	p{
+		font-size: 0.8em;
+	}
+</style>
+</head>
+<body>
+<script type="text/javascript" src="js/jquery.min.js" ></script>
+<script>
+    $(document).ready(function(e) {
+	   showViewportSize();    
+	});
+	$(window).resize(function(e) {
+	   showViewportSize();
+	});
+	function showViewportSize() {
+	   var the_width = $(window).width();
+	   var the_height = $(window).height();                   
+	   $('#width').text(the_width);
+	   $('#height').text(the_height);
+	}
+    </script>
+<p>The benfrain.com super simple, what size is my viewport page?what size is my viewport page?what size is my viewport page?</p>
+<p>Viewport Width:</p>
+<p id="width">Resize to find out!</p>
+<p>Viewport Height:</p>
+<p id="height">Resize to find out!</p>
+</body>
+</html>
