@@ -307,6 +307,7 @@ Person.prototype.getName = function(){
 // 构造一个Person对象
 var person = new Person("zhangsan");
 alert(person.getName()); // 调用getName获取person对象中name属性的值
+
 //3.
     // 定一个累加方法。如sum(1,2,3,4...)
     // 该方法位于window执行环境中。

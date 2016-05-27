@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		.div1,.div2,.div3,.div4,.div5,.div6{
+			width: 50px;
+			height: 50px;
+			background-color: red;
+			transition: width 2s;
+			transition-timing-function: linear;
+			-webkit-transition: width 2s;
+			-webkit-transition-timing-function: linear;
+		}
+		div:hover{
+			width: 300px;
+		}
+		h4~p{
+			color: red;
+		}
+		li~li{
+			color: red;
+		}
+		/*属性选择器*/
+		input[required]{
+			border: 1px solid red;
+		}
+		input[required=true]{
+			border: 1px solid blue;
+		}
+		/*伪类*/
+		.input1:focus{
+			background-color: #D0E9C6;
+		}
+		.input2:active{
+			background-color: #D0E9C6;
+		}
+		button:disabled{
+			background-color: darkgrey;
+		}
+		.input4:target{
+			background-color: #204D74;
+		}
+		div:not(.div2){
+			background-color: blanchedalmond;
+		}
+		/*设置文字第一行*/
+		textarea::first-line{
+			color: red;
+		}
+		/*设置文字首字母*/
+		.div2::first-letter{
+			color: blue;
+			font-weight: bold;
+		}
+		.div1::after{
+			content: "nihao";
+		}
+		/*向前面追加文字*/
+		.div2::before{
+			content: "你好";
+		}
+		/*选中显示文本的背景色和字体颜色*/
+		li::selection{
+			background-color: yellow;
+			color: red;
+		}
+		/*以a开头的*/
+		p[class^=a]{
+			color: blue;
+		}
+		/*以c结尾的*/
+		p[class$=c]{
+			color: #008000;
+		}
+		textarea{
+			height: 100px;
+			width: 300px;
+			word-break: keep-all;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="div1">1</div>
+		<div class="div2">2</div>
+		<div class="div3">3</div>
+		<div class="div4">4</div>
+		<div class="div5">5</div>
+		<div class="div6">6</div>
+		<h4>关系选择器h4~p</h4>
+		<p class="a">p1</p>
+		<p class="a-b">p2</p>
+		<p class="ab">p3</p>
+		<p class="c">p4</p>
+		<p class="abc">p5</p>
+		<h4>关系选择器li~li</h4>
+		<ul>
+			<li>li1</li>
+			<li>li2</li>
+			<li>li3</li>
+			<li>li4</li>
+		</ul>
+		<h4>标签[attr]：input[required]</h4>
+		<p>name:<input class="input1" required /></p>
+		<p>sex:<input class="input2" required /></p>
+		<h4>标签[attr=val]：input[required=true]</h4>
+		<p>name:<input class="input3" required="true" disabled="true"/></p>
+		<p>sex:<input class="input4" required="true" /></p>
+		<textarea>hhhehhhjsjjsjsjsjsjshhhehhhjsjjsjsjsjsjshhhehhhjsjjsjsjsjsjshhhehhhjsjjsjsjsjsjs</textarea>
+		<button disabled="true">提交</button>
+	</body>
+</html>

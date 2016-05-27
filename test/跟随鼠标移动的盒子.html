@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	#box1{ width: 100px; height: 100px; background:#ccc; position: absolute;}
+	</style>
+</head>
+<body>
+
+<div id="box1"></div>
+
+<script>
+	var oBox1 = document.getElementById('box1');
+	document.onmousemove = function(ev){
+		var ev = ev || event;
+
+		oBox1.style.left = ev.clientX+'px';
+		oBox1.style.top = ev.clientY+'px';
+	};
+</script>
+</body>
+</html>
